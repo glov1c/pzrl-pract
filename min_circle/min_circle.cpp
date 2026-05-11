@@ -49,7 +49,7 @@ std::vector<Point2D> extractPointsFromSegments(const std::vector<LineSegment>& s
 }
 
 Point2D findMidPoint(const LineSegment& segment) {
-	return Point2D{(segment.end.x - segment.start.x)/2, (segment.end.y - segment.start.y)/2}; 	
+	return Point2D{segment.start.x +(segment.end.x - segment.start.x)/2, segment.start.y +(segment.end.y - segment.start.y)/2}; 	
 }
 
 
