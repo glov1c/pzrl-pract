@@ -39,7 +39,7 @@ double distance(const Point2D& p1, const Point2D& p2) {
 }
 
 std::vector<Point2D> extractPointsFromSegments(const std::vector<LineSegment>& segments) {
-	std::vector<Point2D> points;
+	std::vector<Point2D> points = {};
 	for(int i = 0; i < segments.size(); i++) {
 		points.push_back(segments[i].start);
 		points.push_back(findMidPoint(segments[i]));	
