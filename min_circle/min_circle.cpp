@@ -15,18 +15,19 @@ bool Circle::isValid() const {
 
 bool Circle::contains(const Point2D& point) const {
 	if (!isValid()) return false;
-	return (distance(point, center) <= radius);
+	return (std::round(distance(point, center) * 100000000.0) / 100000000.0  <= radius);
 }
 
 bool Circle::contains(const LineSegment& segment) const {
 	if (!isValid()) return false;
-	return (distance(segment.start, center) <= radius && distance(segment.end, center) <= radius);
+	return (std::round(distance(segment.start, center) * 100000000.0) / 100000000.0  <= radius && 
+			std::round(distance(segment.end, center) * 100000000.0) / 100000000.0 <= radius);
 }
 
 bool Circle::containsEntireSegment(const LineSegment& segment) const {
-	bool isStart = distance(segment.start, center) <= radius;
-	bool isEnd = distance(segment.end, center) <= radius;
-	bool isMid = distance(findMidPoint(segment), center) <= radius;
+	bool isStart = contains(segment.start);
+	bool isEnd = contains(segment.end);
+	bool isMid = contains(findMidPoint(segment));
 	return (isStart && isMid && isEnd);
 }
 
