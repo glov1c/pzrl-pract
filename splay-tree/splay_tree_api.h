@@ -242,7 +242,7 @@ public:
 		    else if (key < elem->keyValuePair.first) elem = elem->left;
 
 	    }
-	    splay(prev);
+	    if (prev != nullptr) splay(prev);
 	    return nullptr;
     }
 

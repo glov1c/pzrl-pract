@@ -5,11 +5,11 @@ int main() {
 	SplayTree<uint32_t, double> tree;
 
 	tree.insert(14, 1.5);
-	tree.insert(17, 0.5);
-	tree.insert(18, 2.5);
-	tree.remove(17);
+	//tree.insert(17, 0.5);
+	//tree.insert(18, 2.5);
+	//tree.remove(17);
 		
-	double* value = tree.search(18);
+	double* value = tree.search(14);
 	if (value) {
 		std::cout << "value = " << *value << std::endl;
 	}
